@@ -1,4 +1,5 @@
 #!/bin/bash
+# Please leave me a star *
 # Script to install ubuntu(Digital Ocean, 17.10) desktop & enable remote desktop connection
 
 unset password
@@ -39,3 +40,7 @@ echo 'polkit.addRule(function(action, subject) {
  return polkit.Result.YES;
  }
  });' >> /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
+
+# Download dropbox since file sharing is hard
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd

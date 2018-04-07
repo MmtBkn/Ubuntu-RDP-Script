@@ -40,6 +40,9 @@ echo 'polkit.addRule(function(action, subject) {
  return polkit.Result.YES;
  }
  });' >> /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
+ 
+# Fix mouse cursor problem (should be done per user)
+echo 'Xcursor.core: 1' >> /home/$username/.Xresources
 
 # Download dropbox since file sharing is hard
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -

@@ -17,7 +17,7 @@ do
 done
 echo
 
-sudo adduser $username --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+sudo adduser $username --gecos "$username,RoomNumber,WorkPhone,HomePhone" --disabled-password
 echo "$username:$password" | sudo chpasswd
 
 usermod -aG sudo $username
